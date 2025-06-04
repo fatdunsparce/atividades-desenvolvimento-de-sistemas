@@ -1,13 +1,21 @@
-class aluno:
-    def __init__(self, nome, matrícula, curso):
-        self.nome = nome
-        self.matrícula = matrícula
-        self.curso = curso
+class produto:
+    def __init__(self):
+        self.__preço = None
 
-    def exibirdados(self):
-        return self.nome, self.matrícula, self.curso
-    
-a1 = aluno("Maria", 16726, "Banco de Dados")
-a2 = aluno("Otávio", 21562, "Ciencias da Computação")
+    def mostrarpreço(self):
+        return self.__preço
 
-print(a1.exibirdados())
+    def definirpreço(self, p):
+        if p > 0:
+            self.__preço = p
+        else:
+            raise ValueError("Preço deve ser maior que 0")
+
+p1 = produto()
+p2 = produto()
+
+p1.definirpreço(0)
+p2.definirpreço(20)
+
+print(p1.mostrarpreço())
+print(p2.mostrarpreço())
